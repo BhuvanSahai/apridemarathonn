@@ -1,15 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { MapPin, Mail, Phone, ArrowUpRight, Leaf, Shield, Award } from 'lucide-react';
+import { MapPin, Mail, Phone, ArrowUpRight, Leaf, Shield, Award, Instagram, Facebook, Linkedin, Youtube } from 'lucide-react';
 import { EVENT_CONFIG, HOST_CITIES } from '../data/eventData';
 
 export const Footer: React.FC = () => {
   return (
     <footer
       style={{
-        background: '#080A0B',
+        background: '#050608',
         position: 'relative',
-        borderTop: '1px solid rgba(221, 180, 107, 0.2)',
+        borderTop: '1px solid rgba(229, 197, 131, 0.2)',
         overflow: 'hidden',
       }}
     >
@@ -93,7 +93,7 @@ export const Footer: React.FC = () => {
           {/* Col 1: Brand & Verified Details */}
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.25rem' }}>
-              <img src="/logo.svg" alt="ASM Logo" style={{ width: '42px', height: '42px', borderRadius: '10px' }} />
+              <img src="/pride-patna-marathon-logo.png" alt="Pride Patna Marathon" style={{ width: '150px', height: '72px', objectFit: 'contain' }} />
               <div>
                 <div
                   className="font-editorial"
@@ -285,33 +285,106 @@ export const Footer: React.FC = () => {
           </div>
         </div>
 
-        {/* Bottom Bar */}
+        {/* Mockup Exact Bottom Bar */}
         <div
           style={{
-            borderTop: '1px solid rgba(255, 255, 255, 0.08)',
+            borderTop: '1px solid rgba(221, 180, 107, 0.2)',
             paddingTop: '2rem',
+            paddingBottom: '1rem',
             display: 'flex',
             flexWrap: 'wrap',
             alignItems: 'center',
             justifyContent: 'space-between',
-            gap: '1rem',
+            gap: '1.5rem',
             fontSize: '0.8125rem',
             color: 'var(--text-dim)',
           }}
         >
-          <div>
-            © 2027 {EVENT_CONFIG.company}. All verified event rights reserved.
+          {/* Left: (M) ASM VENTURES + Building healthier communities. One step at a time. */}
+          <div style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: '1.25rem' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
+              <div
+                style={{
+                  width: '28px',
+                  height: '28px',
+                  borderRadius: '50%',
+                  border: '1.2px solid var(--gold-metallic)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  background: 'rgba(229,197,131,0.1)',
+                }}
+              >
+                <svg width="16" height="16" viewBox="0 0 40 40" fill="none">
+                  <path d="M10 26 L17 14 L22 22 L26 17 L30 26" stroke="#F5F0E7" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </div>
+              <span style={{ fontFamily: 'var(--font-heading)', fontWeight: 800, letterSpacing: '0.14em', color: '#FFFFFF', fontSize: '0.9rem' }}>
+                ASM VENTURES
+              </span>
+            </div>
+            <span style={{ color: 'rgba(245, 240, 231, 0.5)', fontSize: '0.8125rem' }}>
+              Building healthier communities. One step at a time.
+            </span>
           </div>
-          <div style={{ display: 'flex', gap: '1.5rem' }}>
-            <Link to="/rules" style={{ color: 'var(--text-dim)' }}>
-              Competition Rules
-            </Link>
-            <Link to="/rules" style={{ color: 'var(--text-dim)' }}>
-              Privacy & Waiver
-            </Link>
-            <Link to="/expo" style={{ color: 'var(--text-dim)' }}>
-              Contact Race Secretariat
-            </Link>
+
+          {/* Right: Social icons + Privacy Policy + Terms & Conditions */}
+          <div style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: '1.75rem' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                rel="noreferrer"
+                title="Instagram"
+                style={{ color: 'var(--text-muted)', transition: 'color 0.2s', display: 'flex', alignItems: 'center' }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--gold-metallic)')}
+                onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--text-muted)')}
+              >
+                <Instagram size={17} />
+              </a>
+              <a
+                href="https://facebook.com"
+                target="_blank"
+                rel="noreferrer"
+                title="Facebook"
+                style={{ color: 'var(--text-muted)', transition: 'color 0.2s', display: 'flex', alignItems: 'center' }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--gold-metallic)')}
+                onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--text-muted)')}
+              >
+                <Facebook size={17} />
+              </a>
+              <a
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noreferrer"
+                title="LinkedIn"
+                style={{ color: 'var(--text-muted)', transition: 'color 0.2s', display: 'flex', alignItems: 'center' }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--gold-metallic)')}
+                onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--text-muted)')}
+              >
+                <Linkedin size={17} />
+              </a>
+              <a
+                href="https://youtube.com"
+                target="_blank"
+                rel="noreferrer"
+                title="YouTube"
+                style={{ color: 'var(--text-muted)', transition: 'color 0.2s', display: 'flex', alignItems: 'center' }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--gold-metallic)')}
+                onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--text-muted)')}
+              >
+                <Youtube size={17} />
+              </a>
+            </div>
+
+            <div style={{ display: 'flex', gap: '1.25rem', fontSize: '0.8125rem' }}>
+              <Link to="/rules" style={{ color: 'var(--text-dim)', transition: 'color 0.2s' }} onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--gold-metallic)')} onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--text-dim)')}>
+                Privacy Policy
+              </Link>
+              <Link to="/rules" style={{ color: 'var(--text-dim)', transition: 'color 0.2s' }} onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--gold-metallic)')} onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--text-dim)')}>
+                Terms & Conditions
+              </Link>
+            </div>
           </div>
         </div>
       </div>

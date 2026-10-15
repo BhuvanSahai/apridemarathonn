@@ -1,40 +1,44 @@
 /* =====================================================================
-   ASM VENTURES MARATHON 2027 — DESIGN SYSTEM & TOKENS
+   PRIDE PATNA MARATHON 2027 — DESIGN SYSTEM & TOKENS
    Approved visual direction: Luxury Black & Gold + Athletic Energy
    ===================================================================== */
 
 :root {
-  /* Core Design Tokens */
-  --bg-midnight: #080A0B;
-  --bg-dark-2: #101114;
-  --bg-charcoal: #242322;
-  --bg-charcoal-2: #2D2C2A;
-  --bg-charcoal-card: #18191B;
+  /* Core Ultra-Luxury Obsidian & Champagne Gold Tokens */
+  --bg-midnight: #050608;
+  --bg-dark-2: #0A0C10;
+  --bg-charcoal: #11141C;
+  --bg-charcoal-2: #181C26;
+  --bg-charcoal-card: #0F121A;
   
-  --gold-metallic: #DDB46B;
-  --gold-light: #F0CF8E;
-  --gold-dark: #A57E37;
-  --gold-soft: rgba(221, 180, 107, 0.12);
-  --gold-border: rgba(221, 180, 107, 0.25);
-  --gold-border-subtle: rgba(221, 180, 107, 0.15);
-  --gold-glow: rgba(221, 180, 107, 0.35);
+  --gold-metallic: #E5C583;
+  --gold-light: #F7E4BC;
+  --gold-dark: #B88D3B;
+  --gold-champagne: #F5DEAA;
+  --gold-soft: rgba(229, 197, 131, 0.1);
+  --gold-border: rgba(229, 197, 131, 0.26);
+  --gold-border-subtle: rgba(229, 197, 131, 0.14);
+  --gold-glow: rgba(229, 197, 131, 0.35);
 
-  --text-ivory: #F5F0E7;
-  --text-ivory-soft: #E5E0D5;
-  --text-muted: #B7B2A8;
-  --text-dim: #7B766D;
+  --text-ivory: #FFFFFF;
+  --text-ivory-soft: #E5E9F2;
+  --text-muted: #9BA3B5;
+  --text-dim: #666E80;
 
-  --accent-mint: #7DC2A5;
-  --accent-cobalt: #8FA8E0;
-  --accent-flame: #E58B6D;
-  --accent-violet: #B39DEB;
+  --accent-mint: #34D399;
+  --accent-cobalt: #60A5FA;
+  --accent-flame: #F97316;
+  --accent-violet: #A78BFA;
 
-  --glass-bg: rgba(12, 13, 15, 0.82);
-  --glass-card: rgba(36, 35, 34, 0.7);
-  --glass-border: rgba(221, 180, 107, 0.2);
+  --glass-bg: rgba(7, 9, 13, 0.88);
+  --glass-card: rgba(15, 18, 25, 0.78);
+  --glass-border: rgba(229, 197, 131, 0.22);
 
   --font-editorial: 'Inter Tight', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-serif: 'Instrument Serif', Georgia, serif;
+  --font-script: 'Kaushan Script', cursive;
+  --font-caveat: 'Caveat', cursive;
+  --font-heading: 'Outfit', 'Inter Tight', sans-serif;
   --font-body: 'Plus Jakarta Sans', 'Inter Tight', sans-serif;
 
   --radius-sm: 8px;
@@ -325,3 +329,336 @@ a {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--gold-dark);
 }
+
+/* =====================================================================
+   MOCKUP EXACT MATCHING STYLES — PRIDE PATNA MARATHON
+   ===================================================================== */
+
+.font-script {
+  font-family: var(--font-script);
+}
+
+.font-caveat {
+  font-family: var(--font-caveat);
+}
+
+/* Header Exact */
+.header-nav-link {
+  font-family: var(--font-heading);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: #C8C5BD;
+  transition: all 0.2s ease;
+  position: relative;
+  padding: 0.4rem 0.2rem;
+  letter-spacing: 0.01em;
+}
+
+.header-nav-link:hover,
+.header-nav-link.active {
+  color: #FFFFFF;
+}
+
+.desktop-nav-menu {
+  display: block;
+}
+
+@media (max-width: 860px) {
+  .desktop-nav-menu {
+    display: none;
+  }
+}
+
+.header-nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #DDB46B 0%, #F0CF8E 100%);
+  border-radius: 2px;
+  box-shadow: 0 0 8px rgba(221, 180, 107, 0.6);
+}
+
+.btn-pill-gold {
+  background: linear-gradient(135deg, #F7E4BC 0%, #E5C583 45%, #C29646 100%);
+  color: #07090C !important;
+  font-weight: 700;
+  border-radius: 9999px;
+  padding: 0.7rem 1.6rem;
+  font-size: 0.875rem;
+  letter-spacing: 0.03em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  border: 1px solid rgba(255, 240, 200, 0.5);
+  box-shadow: 0 4px 20px rgba(229, 197, 131, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  transition: all 0.25s var(--transition-smooth);
+  cursor: pointer;
+}
+
+.btn-pill-gold:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(229, 197, 131, 0.45);
+  filter: brightness(1.06);
+}
+
+.btn-pill-translucent {
+  background: rgba(14, 18, 25, 0.75);
+  color: #FFFFFF !important;
+  font-weight: 600;
+  border-radius: 9999px;
+  padding: 0.7rem 1.6rem;
+  font-size: 0.875rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  border: 1px solid rgba(229, 197, 131, 0.3);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.5);
+  transition: all 0.25s var(--transition-smooth);
+  cursor: pointer;
+}
+
+.btn-pill-translucent:hover {
+  background: rgba(229, 197, 131, 0.14);
+  border-color: rgba(229, 197, 131, 0.65);
+  transform: translateY(-2px);
+}
+
+/* Hero Section */
+.hero-wrapper {
+  position: relative;
+  min-height: calc(100vh - 76px);
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: #050608;
+}
+
+.hero-runner-backdrop {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 65%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+@media (max-width: 900px) {
+  .hero-runner-backdrop {
+    width: 100%;
+    opacity: 0.28;
+  }
+}
+
+.hero-matters-container {
+  display: inline-block;
+  position: relative;
+}
+
+.hero-matters-text {
+  font-family: var(--font-script);
+  font-size: clamp(3.2rem, 8.5vw, 6.8rem);
+  font-weight: 400;
+  color: #F5DEAA;
+  display: inline-block;
+  line-height: 0.85;
+  margin-top: 0.2rem;
+  filter: drop-shadow(0 4px 16px rgba(229, 197, 131, 0.35));
+  transform: rotate(-2deg);
+}
+
+.hero-matters-swoosh {
+  position: absolute;
+  bottom: -16px;
+  left: -5%;
+  width: 110%;
+  height: 24px;
+  pointer-events: none;
+}
+
+.patna-runs-badge {
+  font-family: var(--font-script);
+  color: #F5DEAA;
+  font-size: clamp(1.4rem, 2.6vw, 2.3rem);
+  line-height: 1.1;
+  transform: rotate(-8deg);
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.95), 0 0 25px rgba(229, 197, 131, 0.35);
+  position: absolute;
+  pointer-events: none;
+  z-index: 10;
+  right: clamp(2rem, 7vw, 6rem);
+  top: clamp(2.5rem, 8vw, 6.5rem);
+}
+
+/* Scroll indicator right edge */
+.hero-scroll-bar {
+  position: absolute;
+  right: clamp(1rem, 2.5vw, 2.2rem);
+  bottom: clamp(2rem, 6vw, 4rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  z-index: 12;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.hero-scroll-text {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: rgba(229, 197, 131, 0.7);
+}
+
+.hero-scroll-track {
+  width: 2px;
+  height: 48px;
+  background: rgba(255, 255, 255, 0.12);
+  position: relative;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.hero-scroll-dot {
+  width: 100%;
+  height: 16px;
+  background: linear-gradient(180deg, #F5DEAA 0%, #E5C583 100%);
+  border-radius: 2px;
+  position: absolute;
+  top: 0;
+  animation: scrollDown 2s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+}
+
+@keyframes scrollDown {
+  0% { transform: translateY(-100%); opacity: 0; }
+  40% { opacity: 1; }
+  80% { transform: translateY(250%); opacity: 0; }
+  100% { transform: translateY(250%); opacity: 0; }
+}
+
+/* Signature Banner Container */
+.signature-card-container {
+  position: relative;
+  z-index: 20;
+  border-radius: 24px;
+  background: rgba(11, 14, 20, 0.95);
+  border: 1px solid rgba(229, 197, 131, 0.22);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  box-shadow: 0 25px 65px rgba(0, 0, 0, 0.85), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+}
+
+.signature-card-grid {
+  display: grid;
+  grid-template-columns: 370px 1fr;
+}
+
+@media (max-width: 1024px) {
+  .signature-card-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.date-feature-box {
+  position: relative;
+  padding: 2.25rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  border-right: 1px solid rgba(229, 197, 131, 0.16);
+}
+
+@media (max-width: 1024px) {
+  .date-feature-box {
+    border-right: none;
+    border-bottom: 1px solid rgba(229, 197, 131, 0.16);
+  }
+}
+
+.categories-shelf-box {
+  padding: 2rem 2.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.category-mini-card {
+  background: rgba(17, 21, 30, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 1.3rem 1.1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.3s var(--transition-smooth);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.category-mini-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(229, 197, 131, 0.55);
+  background: rgba(24, 29, 42, 0.95);
+  box-shadow: 0 12px 28px -5px rgba(0, 0, 0, 0.7), 0 0 18px rgba(229, 197, 131, 0.18);
+}
+
+/* Why Run With Us Section */
+.why-us-wrap {
+  padding: clamp(3.5rem, 7vw, 6rem) 0;
+  background: #050608;
+  position: relative;
+  border-top: 1px solid rgba(229, 197, 131, 0.12);
+}
+
+.why-feature-pill {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  padding: 1.15rem 1rem;
+  background: rgba(16, 20, 28, 0.65);
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: all 0.25s ease;
+}
+
+.why-feature-pill:hover {
+  background: rgba(22, 27, 38, 0.85);
+  border-color: rgba(229, 197, 131, 0.35);
+  transform: translateY(-2px);
+}
+
+.shoe-highlight-card {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(229, 197, 131, 0.22);
+}
+
+.run-tomorrow-script {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translateY(-50%) rotate(-7deg);
+  font-family: var(--font-script);
+  color: #F5DEAA;
+  font-size: clamp(1.8rem, 3.2vw, 2.75rem);
+  line-height: 1.15;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.95), 0 0 30px rgba(229, 197, 131, 0.35);
+  pointer-events: none;
+  z-index: 5;
+}
+

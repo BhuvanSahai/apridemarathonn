@@ -45,13 +45,11 @@ export const Header: React.FC = () => {
   }, [mobileMenuOpen]);
 
   const navLinks = [
-    { label: 'Home', path: '/' },
-    { label: 'Races & Routes', path: '/categories' },
-    { label: 'About', path: '/about' },
-    { label: 'Athlete Guide', path: '/athlete' },
-    { label: 'Rules & FAQ', path: '/rules' },
-    { label: 'Expo & Contact', path: '/expo' },
-    { label: 'Journal', path: '/blog' },
+    { label: 'Home', path: '/', hash: '#top' },
+    { label: 'About', path: '/about', hash: '#about' },
+    { label: 'Races', path: '/categories', hash: '#races' },
+    { label: 'Gallery', path: '/#gallery', hash: '#gallery' },
+    { label: 'Contact', path: '/expo', hash: '#contact' },
   ];
 
   return (
@@ -64,13 +62,13 @@ export const Header: React.FC = () => {
         zIndex: 100,
         transition: 'all 0.3s ease',
         background: isScrolled
-          ? 'rgba(8, 10, 11, 0.88)'
-          : 'linear-gradient(180deg, rgba(8, 10, 11, 0.95) 0%, rgba(8, 10, 11, 0.4) 100%)',
-        backdropFilter: isScrolled ? 'blur(16px)' : 'none',
-        WebkitBackdropFilter: isScrolled ? 'blur(16px)' : 'none',
+          ? 'rgba(5, 6, 8, 0.94)'
+          : 'linear-gradient(180deg, rgba(5, 6, 8, 0.98) 0%, rgba(5, 6, 8, 0.75) 100%)',
+        backdropFilter: 'blur(24px)',
+        WebkitBackdropFilter: 'blur(24px)',
         borderBottom: isScrolled
-          ? '1px solid rgba(221, 180, 107, 0.2)'
-          : '1px solid rgba(255, 255, 255, 0.05)',
+          ? '1px solid rgba(229, 197, 131, 0.22)'
+          : '1px solid rgba(255, 255, 255, 0.06)',
       }}
     >
       <div
@@ -82,94 +80,51 @@ export const Header: React.FC = () => {
           height: '76px',
         }}
       >
-        {/* Brand Logo & Title */}
+        {/* Brand Logo matching mockup: (M) A S M */}
         <Link
           to="/"
           style={{
             display: 'flex',
             alignItems: 'center',
-            gap: '0.85rem',
+            gap: '0.75rem',
             textDecoration: 'none',
           }}
-          aria-label="ASM Ventures Marathon Home"
+          aria-label="Pride Patna Marathon Home"
         >
-          <img
-            src="/logo.svg"
-            alt="ASM Ventures Emblem"
-            style={{ width: '40px', height: '40px', borderRadius: '10px' }}
-          />
-          <div>
-            <div
-              className="font-editorial"
-              style={{
-                fontSize: '1.125rem',
-                fontWeight: 800,
-                letterSpacing: '0.04em',
-                lineHeight: 1.1,
-                color: 'var(--text-ivory)',
-                textTransform: 'uppercase',
-              }}
-            >
-              ASM Ventures
-            </div>
-            <div
-              style={{
-                fontSize: '0.6875rem',
-                fontWeight: 600,
-                color: 'var(--gold-metallic)',
-                letterSpacing: '0.14em',
-                textTransform: 'uppercase',
-              }}
-            >
-              Marathon 2027 · Patna
-            </div>
-          </div>
+<img src="/pride-patna-marathon-logo.png" alt="Pride Patna Marathon" style={{ width: 'min(22vw, 190px)', height: '54px', objectFit: 'contain', flexShrink: 0 }} />
         </Link>
 
-        {/* Desktop Navigation Links */}
+        {/* Center Desktop Navigation Links */}
         <nav
-          style={{ display: 'none' }}
-          className="desktop-nav"
+          className="desktop-nav-menu"
           aria-label="Primary Navigation"
         >
           <ul
             style={{
               display: 'flex',
               alignItems: 'center',
-              gap: '1.75rem',
+              gap: '2.25rem',
               listStyle: 'none',
+              margin: 0,
+              padding: 0,
             }}
           >
             {navLinks.map((link) => {
-              const isActive = location.pathname === link.path;
+              const isActive = location.pathname === link.path && !location.hash;
               return (
-                <li key={link.path}>
+                <li key={link.label}>
                   <Link
                     to={link.path}
-                    style={{
-                      fontFamily: 'var(--font-editorial)',
-                      fontSize: '0.875rem',
-                      fontWeight: isActive ? 700 : 500,
-                      color: isActive ? 'var(--gold-light)' : 'var(--text-muted)',
-                      letterSpacing: '0.02em',
-                      position: 'relative',
-                      padding: '0.5rem 0',
+                    className={`header-nav-link ${isActive ? 'active' : ''}`}
+                    onClick={(e) => {
+                      if (link.hash && location.pathname === '/' && link.hash !== '#top') {
+                        e.preventDefault();
+                        const elem = document.querySelector(link.hash);
+                        if (elem) elem.scrollIntoView({ behavior: 'smooth' });
+                      }
                     }}
                   >
                     {link.label}
-                    {isActive && (
-                      <span
-                        style={{
-                          position: 'absolute',
-                          bottom: 0,
-                          left: 0,
-                          width: '100%',
-                          height: '2px',
-                          background: 'var(--gold-metallic)',
-                          borderRadius: '2px',
-                        }}
-                      />
-                    )}
                   </Link>
                 </li>
               );
@@ -177,65 +132,58 @@ export const Header: React.FC = () => {
           </ul>
         </nav>
 
-        {/* Desktop CTA & Admin shortcut */}
+        {/* Right Actions: Register Now Button + Hamburger Menu */}
         <div
-          style={{ display: 'none', alignItems: 'center', gap: '1rem' }}
-          className="desktop-cta"
-        >
-          <Link
-            to="/admin"
-            style={{
-              color: 'var(--text-dim)',
-              fontSize: '0.75rem',
-              display: 'flex',
-              alignItems: 'center',
-              gap: '0.25rem',
-              padding: '0.4rem 0.6rem',
-              borderRadius: 'var(--radius-sm)',
-            }}
-            title="Operations Portal"
-          >
-            <Shield size={14} />
-            <span>Admin</span>
-          </Link>
-
-          <Link
-            to="/register"
-            className="btn btn-gold"
-            style={{
-              fontSize: '0.8125rem',
-              padding: '0.625rem 1.35rem',
-              minHeight: '42px',
-            }}
-          >
-            Register Now
-            <ChevronRight size={16} />
-          </Link>
-        </div>
-
-        {/* Mobile Hamburger Button */}
-        <button
-          type="button"
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          aria-expanded={mobileMenuOpen}
-          aria-label={mobileMenuOpen ? 'Close Navigation Menu' : 'Open Navigation Menu'}
-          className="mobile-toggle"
           style={{
-            background: 'none',
-            border: '1px solid var(--gold-border)',
-            borderRadius: 'var(--radius-sm)',
-            padding: '0.5rem',
-            color: 'var(--gold-metallic)',
-            cursor: 'pointer',
             display: 'flex',
             alignItems: 'center',
-            justifyContent: 'center',
-            minHeight: '44px',
-            minWidth: '44px',
+            gap: '1rem',
           }}
         >
-          {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+          <Link
+            to="/register"
+            className="btn-pill-gold"
+          >
+            <span>Register Now</span>
+            <span style={{ fontSize: '1.1rem', lineHeight: 1 }}>→</span>
+          </Link>
+
+          {/* Hamburger Menu Toggle (Mockup 3 horizontal bars) */}
+          <button
+            type="button"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-expanded={mobileMenuOpen}
+            aria-label={mobileMenuOpen ? 'Close Navigation Menu' : 'Open Navigation Menu'}
+            style={{
+              background: 'transparent',
+              border: 'none',
+              padding: '0.5rem',
+              color: 'var(--gold-metallic)',
+              cursor: 'pointer',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'center',
+              alignItems: 'center',
+              gap: '5px',
+              width: '42px',
+              height: '42px',
+              borderRadius: '8px',
+              transition: 'background 0.2s ease',
+            }}
+            onMouseEnter={(e) => (e.currentTarget.style.background = 'rgba(229,197,131,0.12)')}
+            onMouseLeave={(e) => (e.currentTarget.style.background = 'transparent')}
+          >
+            {mobileMenuOpen ? (
+              <X size={26} color="var(--gold-metallic)" />
+            ) : (
+              <>
+                <span style={{ display: 'block', width: '22px', height: '2px', background: 'var(--gold-metallic)', borderRadius: '2px', transition: 'all 0.2s ease' }} />
+                <span style={{ display: 'block', width: '22px', height: '2px', background: 'var(--gold-metallic)', borderRadius: '2px', transition: 'all 0.2s ease' }} />
+                <span style={{ display: 'block', width: '22px', height: '2px', background: 'var(--gold-metallic)', borderRadius: '2px', transition: 'all 0.2s ease' }} />
+              </>
+            )}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Drawer Overlay */}
@@ -246,9 +194,9 @@ export const Header: React.FC = () => {
             inset: 0,
             top: '76px',
             height: 'calc(100vh - 76px)',
-            background: 'rgba(8, 10, 11, 0.98)',
-            backdropFilter: 'blur(20px)',
-            WebkitBackdropFilter: 'blur(20px)',
+            background: 'rgba(5, 6, 8, 0.98)',
+            backdropFilter: 'blur(24px)',
+            WebkitBackdropFilter: 'blur(24px)',
             zIndex: 99,
             overflowY: 'auto',
             padding: '2rem 1.5rem',
@@ -258,60 +206,60 @@ export const Header: React.FC = () => {
             borderTop: '1px solid var(--gold-border)',
           }}
         >
-          <nav aria-label="Mobile Navigation">
-            <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
-              {navLinks.map((link) => {
+          <nav aria-label="Navigation Menu">
+            <div style={{ marginBottom: '1.25rem', paddingBottom: '0.75rem', borderBottom: '1px solid rgba(229,197,131,0.2)' }}>
+              <div style={{ color: 'var(--gold-metallic)', fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase' }}>
+                Navigation & Events
+              </div>
+            </div>
+            <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
+              {[
+                { label: 'Home', path: '/' },
+                { label: 'Races & Categories (5K, 10K, 21K, 42K)', path: '/categories' },
+                { label: 'About Pride Patna Marathon', path: '/about' },
+                { label: 'Athlete Guide & Preparation', path: '/athlete' },
+                { label: 'Rules, Waiver & FAQ', path: '/rules' },
+                { label: 'Race Expo & Bib Pickup', path: '/expo' },
+                { label: 'Journal & Stories', path: '/blog' },
+                { label: 'Operations Portal (Admin)', path: '/admin' },
+              ].map((link) => {
                 const isActive = location.pathname === link.path;
                 return (
                   <li key={link.path}>
                     <Link
                       to={link.path}
+                      onClick={() => setMobileMenuOpen(false)}
                       style={{
-                        fontFamily: 'var(--font-editorial)',
-                        fontSize: '1.35rem',
-                        fontWeight: 700,
+                        fontFamily: 'var(--font-heading)',
+                        fontSize: '1.15rem',
+                        fontWeight: 600,
                         color: isActive ? 'var(--gold-metallic)' : 'var(--text-ivory)',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'space-between',
-                        padding: '0.5rem 0',
-                        borderBottom: '1px solid rgba(255, 255, 255, 0.06)',
+                        padding: '0.45rem 0',
+                        borderBottom: '1px solid rgba(255, 255, 255, 0.05)',
+                        transition: 'color 0.2s ease',
                       }}
                     >
                       <span>{link.label}</span>
-                      <ChevronRight size={18} style={{ opacity: 0.5 }} />
+                      <ChevronRight size={18} style={{ opacity: 0.5, color: '#DDB46B' }} />
                     </Link>
                   </li>
                 );
               })}
-              <li>
-                <Link
-                  to="/admin"
-                  style={{
-                    fontFamily: 'var(--font-editorial)',
-                    fontSize: '1rem',
-                    color: 'var(--text-dim)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '0.5rem',
-                    padding: '0.5rem 0',
-                  }}
-                >
-                  <Shield size={16} />
-                  <span>Operations / Admin Portal</span>
-                </Link>
-              </li>
             </ul>
           </nav>
 
-          <div style={{ marginTop: '2.5rem', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+          <div style={{ marginTop: '2rem', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
             <Link
               to="/register"
-              className="btn btn-gold"
-              style={{ width: '100%', minHeight: '50px' }}
+              onClick={() => setMobileMenuOpen(false)}
+              className="btn-pill-gold"
+              style={{ width: '100%', minHeight: '48px', fontSize: '1rem' }}
             >
-              Reserve Your Bib
-              <ChevronRight size={18} />
+              <span>Reserve Your Bib Now</span>
+              <span>→</span>
             </Link>
             <div style={{ textAlign: 'center', color: 'var(--text-dim)', fontSize: '0.8125rem' }}>
               {EVENT_CONFIG.venue} · {EVENT_CONFIG.dateFormatted}
@@ -319,21 +267,6 @@ export const Header: React.FC = () => {
           </div>
         </div>
       )}
-
-      {/* Media query styling for header responsiveness */}
-      <style>{`
-        @media (min-width: 1024px) {
-          .desktop-nav {
-            display: block !important;
-          }
-          .desktop-cta {
-            display: flex !important;
-          }
-          .mobile-toggle {
-            display: none !important;
-          }
-        }
-      `}</style>
     </header>
   );
 };

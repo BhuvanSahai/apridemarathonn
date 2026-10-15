@@ -4,8 +4,10 @@ node_modules/
 .pnp.js
 
 # Production build
+.next/
 dist/
 build/
+*.tsbuildinfo
 
 # Environment
 .env

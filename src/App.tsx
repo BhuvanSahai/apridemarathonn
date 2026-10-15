@@ -4,15 +4,15 @@ import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import { ScrollToTop } from './components/ScrollToTop';
 
-import { HomePage } from './pages/HomePage';
-import { CategoriesPage } from './pages/CategoriesPage';
-import { RegistrationPage } from './pages/RegistrationPage';
-import { AboutPage } from './pages/AboutPage';
-import { AthleteGuidePage } from './pages/AthleteGuidePage';
-import { RulesPage } from './pages/RulesPage';
-import { ExpoPage } from './pages/ExpoPage';
-import { JournalPage } from './pages/JournalPage';
-import { AdminPage } from './pages/AdminPage';
+import { HomePage } from './views/HomePage';
+import { CategoriesPage } from './views/CategoriesPage';
+import { RegistrationPage } from './views/RegistrationPage';
+import { AboutPage } from './views/AboutPage';
+import { AthleteGuidePage } from './views/AthleteGuidePage';
+import { RulesPage } from './views/RulesPage';
+import { ExpoPage } from './views/ExpoPage';
+import { JournalPage } from './views/JournalPage';
+import { AdminPage } from './views/AdminPage';
 
 export const App: React.FC = () => {
   return (

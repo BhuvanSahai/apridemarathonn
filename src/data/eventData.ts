@@ -1,20 +1,20 @@
 import { RaceCategory, PartnerTier, FAQCategory, BlogPost } from '../types';
 
 export const EVENT_CONFIG = {
-  company: 'ASM Ventures',
-  event: 'ASM Ventures Marathon',
+  company: 'Pride Patna Marathon',
+  event: 'Pride Patna Marathon',
   edition: 'Edition 2027',
   city: 'Patna, Bihar',
   venue: 'Gandhi Maidan, Patna',
   dateIso: '2027-02-14T05:00:00+05:30',
   dateFormatted: 'Sunday, February 14, 2027',
   timeFormatted: '05:00 AM IST',
-  address: 'ASM Ventures, Fraser Road, Patna – 800001, Bihar',
-  email: 'run@asmventures.com',
+  address: 'Pride Patna Marathon Secretariat, Fraser Road, Patna – 800001, Bihar',
+  email: 'run@pridepatnamarathon.com',
   phone: '+91 XXXXX XXXXX',
   tagline: 'Every Mile Matters.',
-  subheadline: 'Six races. Four cities. One unforgettable morning when all of Patna runs together — presented by ASM Ventures.',
-  description: "Patna's premier community running festival organized by ASM Ventures. Featuring AFI & AIMS certified courses, sustainable seed bibs, and world-class hydration support.",
+  subheadline: 'Six races. Four cities. One unforgettable morning when all of Patna runs together — presented by Pride Patna Marathon.',
+  description: "Patna's premier community running festival organized by Pride Patna Marathon. Featuring AFI & AIMS certified courses, sustainable seed bibs, and world-class hydration support.",
 };
 
 export const RACE_CATEGORIES: RaceCategory[] = [
@@ -142,7 +142,7 @@ export const RACE_CATEGORIES: RaceCategory[] = [
       'Ultra drop-bag checkpoint stations at KM 25 and KM 38',
       'Pre-race elite medical clearance required',
     ],
-    perks: ['Custom Ultra Finisher Belt Buckle', 'High-Visibility Ultra Windbreaker', 'Complimentary Sports Recovery Protocol', 'Lifetime ASM Ultra Roster Induction'],
+    perks: ['Custom Ultra Finisher Belt Buckle', 'High-Visibility Ultra Windbreaker', 'Complimentary Sports Recovery Protocol', 'Lifetime Pride Patna Marathon Ultra Roster Induction'],
   },
   {
     code: 'virtual',
@@ -212,15 +212,15 @@ export const GREEN_PLEDGES = [
 ];
 
 export const TIMELINE = [
-  { year: '2018', text: 'ASM Ventures is founded in Patna as an events & community experiences enterprise.' },
+  { year: '2018', text: 'Pride Patna Marathon is founded in Patna as an events & community experiences enterprise.' },
   { year: '2020', text: 'First community 5K along the Ganga riverfront — 500 enthusiastic runners turn up.' },
   { year: '2022', text: '21K Half Marathon inaugurated. AIMS-certified course with over 5,000+ participants.' },
   { year: '2024', text: 'Zero-waste race policy officially adopted. 15,000 saplings planted through runner pledges.' },
-  { year: '2027', text: 'ASM Ventures Marathon Edition 2027: 50,000 runners, 4 cities, 6 race categories. The movement soars.' },
+  { year: '2027', text: 'Pride Patna Marathon Edition 2027: 50,000 runners, 4 cities, 6 race categories. The movement soars.' },
 ];
 
 export const ORGANIZER_CREDENTIALS = [
-  { title: 'ASM Ventures', desc: 'Race director — administrative permits, logistics, runner experience & zero-waste mandate' },
+  { title: 'Pride Patna Marathon', desc: 'Race director — administrative permits, logistics, runner experience & zero-waste mandate' },
   { title: 'Bihar Striders Running Club', desc: 'Technical partner — course safety, timing mat logistics & pace teams' },
   { title: 'AFI & AIMS Certified', desc: 'Athletics Federation of India + Association of International Marathons & Distance Races' },
 ];
@@ -241,7 +241,7 @@ export const FAQ_CATEGORIES: FAQCategory[] = [
       },
       {
         q: 'Can I transfer my bib to someone else?',
-        a: 'No. Bib transfers are strictly prohibited. Running under another person’s registration results in immediate disqualification and a lifetime ban from all ASM Ventures events.',
+        a: 'No. Bib transfers are strictly prohibited. Running under another person’s registration results in immediate disqualification and a lifetime ban from all Pride Patna Marathon events.',
       },
       {
         q: 'Is there an age limit or qualification certificate needed for the 50K Ultra and 42K?',
@@ -330,9 +330,9 @@ export const BLOG_POSTS: BlogPost[] = [
     readTime: '5 min read',
     tone: '#DDB46B',
     image: '/images/stairs-training.jpg',
-    excerpt: 'Behind the engineering of plantable seed bibs, recycled poly performance fabrics, and zero-waste aid zones at ASM Ventures Marathon.',
+    excerpt: 'Behind the engineering of plantable seed bibs, recycled poly performance fabrics, and zero-waste aid zones at Pride Patna Marathon.',
     content: [
-      'Traditional mass-participation sporting events generate tons of single-use disposable plastics, discarded bib pins, and non-biodegradable promotional swag. At ASM Ventures, we decided to change the paradigm from the ground up.',
+      'Traditional mass-participation sporting events generate tons of single-use disposable plastics, discarded bib pins, and non-biodegradable promotional swag. At Pride Patna Marathon, we decided to change the paradigm from the ground up.',
       'Each Edition 2027 bib is embedded with native organic wildflower seeds. After completing your race, instead of tossing the bib into a drawer, runners can plant it in soil, water it, and watch vibrant flora sprout as a living memory of their accomplishment.',
       'Furthermore, our high-wicking technical race jerseys are crafted entirely from recycled ocean plastics and discarded consumer bottles, demonstrating that elite athletic apparel can coexist with rigorous environmental stewardship.',
     ],
